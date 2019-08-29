@@ -38,7 +38,7 @@ try {
     </head>
     <body>
         <h1>scraph</h1>
-        <form action="register.php" method="post">
+        <form action="regist.php" method="post">
             <p>URL:</p>
             <input type="text" name="url">
             <p>Comment:</p>
