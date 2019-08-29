@@ -47,8 +47,8 @@ try {
         </form>
         <h1>Entries</h1>
 <?php foreach($entries as $entry): ?>
-        <h4><?= $entry->getUrl() ?></h4>
-        <p><?= $entry->getBody() ?></p>
+        <h4><?= htmlspecialchars($entry->getUrl()) ?></h4>
+        <p><?= htmlspecialchars($entry->getBody()) ?></p>
         <a href="./delete.php?id=<?= $entry->getId() ?>">削除</a>
 <?php endforeach ?>
     </body>
