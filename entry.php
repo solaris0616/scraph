@@ -10,6 +10,10 @@ class Entry {
         $this->body = $body;
     }
 
+    public function getId() {
+        return $this->id;
+    }
+
     public function getUrl() {
         return $this->url;
     }

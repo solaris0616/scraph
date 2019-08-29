@@ -46,13 +46,10 @@ try {
             <input type="submit" value="Regist">
         </form>
         <h1>Entries</h1>
-        <?php if($pdo): ?>
-            <?php foreach($entries as $entry): ?>
-                <h4><?php echo $entry->getUrl() ?></h4>
-                <p><?php echo $entry->getBody() ?></p>
-            <?php endforeach ?>
-        <?php else: ?>
-            <h3>Failed to connect database.</h3>
-        <?php endif ?>
+<?php foreach($entries as $entry): ?>
+        <h4><?= $entry->getUrl() ?></h4>
+        <p><?= $entry->getBody() ?></p>
+        <a href="./delete.php?id=<?= $entry->getId() ?>">削除</a>
+<?php endforeach ?>
     </body>
 </html>
