@@ -5,7 +5,6 @@ require_once('entry.php');
 $entries = array();
 
 // connect to database
-// https://qiita.com/mpyw/items/b00b72c5c95aac573b71
 try {
     $pdo = new PDO(
         'mysql:dbname='.$db_conf['dbname'].';host='.$db_conf['hostname'].';charset=utf8mb4',
