@@ -1,0 +1,12 @@
+{
+    "name": "tongari/scraph",
+    "authors": [
+        {
+            "name": "solaris0616",
+            "email": "solaris0616@gmail.com"
+        }
+    ],
+    "require": {
+        "electrolinux/phpquery": "^0.9.6"
+    }
+}
