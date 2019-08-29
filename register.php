@@ -1,8 +1,12 @@
 <?php
 require_once('configuration.php');
+require_once('./vendor/autoload.php');
 
 $url = $_POST['url'];
 $body = $_POST['body'];
+
+$html = file_get_contents($url);
+$title = phpQuery::newDocument($html)->find("title")->text();
 
 // connect to database
 try {
@@ -19,10 +23,11 @@ try {
     );
 
     // query
-    $query = 'INSERT INTO entries (url, body) VALUES (:url, :body)';
+    $query = 'INSERT INTO entries (url, title, body) VALUES (:url, :title, :body)';
     $stmt = $pdo->prepare($query);
     // bind
     $stmt->bindValue(':url', $url, PDO::PARAM_STR);
+    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
     $stmt->bindValue(':body', $body, PDO::PARAM_STR);
     // execute
     $stmt->execute();
